@@ -69,6 +69,7 @@ function install_prebuilt {
     local existing_version=$(find $PY_PKGS -name "${pkg}-*" | cut -d'-' -f3)
     if [[ $existing_version == $install_version ]]; then
       puts-step "Existing $pkg ($existing_version) package detected."
+      cd ..
       return
     else
       puts-step "Removing old installation of $pkg ($existing_version)."
